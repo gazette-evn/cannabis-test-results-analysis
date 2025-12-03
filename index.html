@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <title>Cannabis Test Results Analysis</title>
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #1a1a2e; }
@@ -24,8 +25,9 @@ var c = "PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD48bWV0YSBjaGFyc2V0PSJ1dGYtOCIgLz4
 function checkPwd() {
   var p = document.getElementById('pwd').value;
   if(p === 'gazettepp2025') {
+    var decoded = decodeURIComponent(escape(atob(c)));
     document.open();
-    document.write(atob(c));
+    document.write(decoded);
     document.close();
   } else {
     document.getElementById('err').style.display = 'block';
